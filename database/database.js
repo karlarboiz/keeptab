@@ -9,7 +9,7 @@ if(process.env.MONGODB_URL) {
 let handleData;
 
 async function run(){
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    const client = new MongoClient(mongodbURL, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
    client.connect(err => {
     handle= client.db("keeptab2");
     // perform actions on the collection object
