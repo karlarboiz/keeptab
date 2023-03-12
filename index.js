@@ -37,7 +37,7 @@ const main = require('./routes/addingtab__route')
 
 app.use('/',main)
 
-let PORT = 127.0.0.1;
+let PORT = `0.0.0.0`;
 
 if(process.env.PORT) {
     PORT = process.env.PORT
