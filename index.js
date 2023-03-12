@@ -7,7 +7,7 @@ const ObjectId = mongodb.ObjectId;
 
 const MongoDBStore = require('connect-mongodb-session')(session);
 const store = new MongoDBStore({
-  uri: 'mongodb://localhost:27017',
+  uri: "mongodb+srv://karlarboiz:O2oaiaxkmIZj7huz@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority",
   databaseName:'keeptab2',
   collection: 'sessions'
 });
