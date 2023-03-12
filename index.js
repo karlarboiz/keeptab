@@ -44,5 +44,5 @@ if(process.env.PORT) {
 }
 
 database.runFunc().then(()=>{
-    app.listen(`0.0.0.0`);
+    app.listen(PORT);
 })
