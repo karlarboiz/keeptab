@@ -37,12 +37,12 @@ const main = require('./routes/addingtab__route')
 
 app.use('/',main)
 
-let PORT = `0.0.0.0`;
+let PORT = 3000;
 
 if(process.env.PORT) {
     PORT = process.env.PORT
 }
 
 database.runFunc().then(()=>{
-    app.listen(PORT);
+    app.listen(`0.0.0.0`);
 })
