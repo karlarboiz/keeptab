@@ -4,7 +4,7 @@
   "description": "revival of keeptab project we deleted",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "resurrection",
