@@ -1,0 +1,14 @@
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 5rem;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+header nav a {
+    color: #740852;
+    font-size: 1.5rem;
+    font-weight: 900;
+}

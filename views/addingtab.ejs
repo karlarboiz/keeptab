@@ -1,0 +1,51 @@
+<%- include('include/header',{
+    Title: "Add Tab"
+  }) %>
+<script src="/scripts/addingtab-script.js" defer></script>
+</head>
+<body>
+    <%- include('include/nav') %>
+    
+    <form action="/addingtab" method="POST" id="submit-tab">
+        <div class="form-control">
+            <label for="customer">Customers:</label>
+            <select name="customer" id="customer">
+                
+                <% for(const data of customers) {%>
+                    <option value="<%=data._id%>">
+                        <%=data.name.firstName%>
+                    </option>
+                <%}%>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="product">Products</label>
+            <select name="product" id="product">
+                
+                <% for(const data of products) {%>
+                    <option value="<%=data._id%>">
+                        <%=data.name%>
+                    </option>
+                <%}%>
+            </select>
+        </div>
+
+       <div class="tab-control">
+   
+            <input type="button" value="-" id="button-minus">
+            <input type="button" value="+" id="button-add">
+            <input type="number" readonly name="productnumber">
+            <input type="number" readonly name="total">
+       </div>
+
+        <input type="submit" value="Register" id="submit-btn">
+    </form>
+
+   <%if(logtab) {%>
+    
+    <%- include('list-data',{logtab:logtab}) %>
+    <%}%>
+    
+</body>
+</html>

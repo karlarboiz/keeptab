@@ -1,0 +1,17 @@
+
+<div id="logtab-list">
+    <h1 class="logtab-header">Logtab List</h1>
+
+    <ul class="logtab-container">
+        <% for(const data of logtab) {%>
+            <li>
+                <hr> 
+                <p><%=data.cname%></p>
+                <p><%=data.pnumber%> <%=data.pname%> </p>
+                <p>P<%=data.total%></p>
+                <p><%=data.date%></p>
+            </li>
+        <%}%>
+    </ul>
+            
+</div>
