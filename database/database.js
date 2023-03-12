@@ -9,9 +9,13 @@ if(process.env.MONGODB_URL) {
 let handleData;
 
 async function run(){
-    const client = await MongoClient.connect(mongodbURL);
-    handleData = client.db('keeptab2');
-
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+   client.connect(err => {
+    handle= client.db("keeptab2");
+    // perform actions on the collection object
+    client.close();
+    });
+   
 }
 
 function getDb() {
@@ -21,6 +25,15 @@ function getDb() {
 
    return handleData
 }
+
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const uri = "mongodb+srv://karlarboiz:<password>@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 module.exports = {
     runFunc: run,
