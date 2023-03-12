@@ -1,4 +1,4 @@
-const mongodb = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
 let mongodbURL = "mongodb+srv://karlarboiz:O2oaiaxkmIZj7huz@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority";
@@ -10,11 +10,8 @@ let handleData;
 
 async function run(){
     const client = new MongoClient(mongodbURL, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-   client.connect(err => {
-    handle= client.db("keeptab2");
-    // perform actions on the collection object
-    client.close();
-    });
+    await client.connect();
+    handleData = client.db('keeptab2');
    
 }
 
