@@ -9,14 +9,11 @@ let handleData;
 
 async function run(){
     const client = await MongoClient.connect(mongodbURL);
-
     handleData = client.db('keeptab2');
-   
 }
 
 function getDb() {
     if(!handleData) {
-        alert('Did not connect')
         throw {message: "Connection failed"}
     }
 
