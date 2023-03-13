@@ -43,14 +43,14 @@ const main = require('./routes/addingtab__route')
 
 app.use('/',main)
 
-let PORT = 3000;
+let PORT = 3000 ;
 
 if(process.env.DB_PORT) {
     PORT = process.env.DB_PORT
 }
 database.runFunc()
 .then(()=>{
-    app.listen(PORT);
+    app.listen(`0.0.0.0`);
 }).catch(function(error) {
         console.log(error);
         console.log("Connecting to the database failed")
