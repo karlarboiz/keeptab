@@ -2,7 +2,7 @@
   "name": "keeptab",
   "version": "1.0.0",
   "description": "revival of keeptab project we deleted",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
