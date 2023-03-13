@@ -40,7 +40,7 @@ app.use('/',main)
 let PORT = `0.0.0.0`;
 database.runFunc()
 .then(()=>{
-    app.listen(PORT);
+    app.listen(`0.0.0.0`);
 }).catch(function(error) {
         console.log("Connecting to the database failed")
 })
