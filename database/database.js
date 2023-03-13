@@ -9,9 +9,10 @@ let handleData;
 
 async function run(){
     const client = new MongoClient(mongodbURL, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    await client.connect();
-    handleData = client.db('keeptab2');
-   
+    client.connect(err => {
+        handleData = client.db('keeptab2');
+        client.close();
+      });
 }
 
 function getDb() {
