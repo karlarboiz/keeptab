@@ -46,5 +46,6 @@ database.runFunc()
 .then(()=>{
     app.listen(PORT);
 }).catch(function(error) {
+        console.log(error);
         console.log("Connecting to the database failed")
 })
