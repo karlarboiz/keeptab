@@ -38,6 +38,9 @@ const main = require('./routes/addingtab__route')
 app.use('/',main)
 
 let PORT = `0.0.0.0`;
-database.runFunc().then(()=>{
+database.runFunc()
+.then(()=>{
     app.listen(PORT);
+}).catch(function(error) {
+        console.log("Connecting to the database failed")
 })
