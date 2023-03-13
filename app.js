@@ -5,9 +5,15 @@ const app = express();
 const mongodb = require('mongodb');
 const ObjectId = mongodb.ObjectId;
 
+let server = 'mongodb://localhost:27017';
+
+if(process.env.DB_USERNAME || process.env.DB_PASSWORD) {
+    server = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority`
+}
+
 const MongoDBStore = require('connect-mongodb-session')(session);
 const store = new MongoDBStore({
-  uri: "mongodb+srv://karlarboiz:O2oaiaxkmIZj7huz@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority",
+  uri: server,
   databaseName:'keeptab2',
   collection: 'sessions'
 });
