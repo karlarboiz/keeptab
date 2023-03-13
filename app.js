@@ -40,7 +40,7 @@ app.use('/',main)
 let PORT = 3000;
 
 if(process.env.DB_PORT) {
-    PORT = process.env.DB_MONGODBURL
+    PORT = process.env.DB_PORT
 }
 database.runFunc()
 .then(()=>{
