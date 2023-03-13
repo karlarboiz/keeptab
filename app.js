@@ -54,4 +54,6 @@ database.runFunc()
 }).catch(function(error) {
         console.log(error);
         console.log("Connecting to the database failed")
+}).finally(function(){
+    console.log('Connection Successful')
 })
