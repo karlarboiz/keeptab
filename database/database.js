@@ -11,8 +11,9 @@ let handleData;
 
 async function run(){
     const client = await MongoClient.connect(mongodbURL);
-    console.log(mongodbURL)
     handleData = client.db('keeptab2');
+
+    console.log(handleData)
 }
 
 function getDb() {
