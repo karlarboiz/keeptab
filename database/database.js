@@ -2,8 +2,11 @@ const mongodb = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
 
-let mongodbURL = "mongodb+srv://karlarboiz:O2oaiaxkmIZj7huz@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority";
+let mongodbURL = 'mongodb://localhost:27017'; 
 
+if(process.env.DB_MONGODBURL) {
+    mongodbURL = process.env.DB_MONGODBURL
+}
 let handleData;
 
 async function run(){

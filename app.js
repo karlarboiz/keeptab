@@ -37,10 +37,14 @@ const main = require('./routes/addingtab__route')
 
 app.use('/',main)
 
-let PORT = `0.0.0.0`;
+let PORT = 3000;
+
+if(process.env.DB_PORT) {
+    PORT = process.env.DB_MONGODBURL
+}
 database.runFunc()
 .then(()=>{
-    app.listen(`0.0.0.0`);
+    app.listen(PORT);
 }).catch(function(error) {
         console.log("Connecting to the database failed")
 })
