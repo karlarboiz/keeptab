@@ -1,6 +1,4 @@
 const mongodb = require('mongodb');
-
-
 const MongoClient = mongodb.MongoClient;
 
 let mongodbURL = 'mongodb://localhost:27017'; 
@@ -20,11 +18,6 @@ function getDb() {
     if(!handleData) {
         throw {message: "Connection failed"}
     }
-
-    else {
-        console.log('Connected Successfully')
-    }
- 
    return handleData
 }
 
