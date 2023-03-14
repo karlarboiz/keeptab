@@ -9,7 +9,7 @@ if(process.env.DB_USERNAME || process.env.DB_PASSWORD) {
 let handleData;
 
 async function run(){
-    const client = await MongoClient.connect(mongodbURL);
+    const client = await MongoClient.connect("mongodb+srv://karlarboiz2:4LSkPzFKPnAJRN6k@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority");
     handleData = client.db('keeptab2');
 }
 

@@ -13,7 +13,7 @@ if(process.env.DB_USERNAME || process.env.DB_PASSWORD) {
 
 const MongoDBStore = require('connect-mongodb-session')(session);
 const store = new MongoDBStore({
-  uri: server,
+  uri: "mongodb+srv://karlarboiz2:4LSkPzFKPnAJRN6k@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority",
   databaseName:'keeptab2',
   collection: 'sessions'
 });
@@ -50,7 +50,7 @@ if(process.env.DB_PORT) {
 }
 database.runFunc()
 .then(()=>{
-    app.listen(process.env.DB_PORT);
+    app.listen(PORT);
 }).catch(function() {
         console.log("Connecting to the database failed")
 }).finally(function(){
