@@ -50,10 +50,11 @@ if(process.env.DB_PORT) {
 }
 database.runFunc()
 .then(()=>{
-    app.listen(`0.0.0.0`);
+    app.listen(PORT);
 }).catch(function(error) {
         console.log(error);
         console.log("Connecting to the database failed")
 }).finally(function(){
+        console.log(PORT)
     console.log('Connection Successful')
 })
