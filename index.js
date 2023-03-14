@@ -45,12 +45,12 @@ app.use('/',main)
 
 let PORT = 3000 ;
 
-if(process.env.DB_PORT) {
-    PORT = process.env.DB_PORT
+if(process.env.PORT) {
+    PORT = process.env.PORT
 }
 database.runFunc()
 .then(()=>{
-    app.listen('0.0.0.0');
+    app.listen(PORT);
 }).catch(function() {
         console.log("Connecting to the database failed")
 }).finally(function(){
