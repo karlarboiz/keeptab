@@ -1,22 +1,6 @@
 const express = require('express');
-const session = require('express-session')
 const path = require('path');
 const app = express();
-const mongodb = require('mongodb');
-const ObjectId = mongodb.ObjectId;
-
-let server = 'mongodb://localhost:27017';
-
-if(process.env.DB_USERNAME || process.env.DB_PASSWORD) {
-    server = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority`
-}
-
-const MongoDBStore = require('connect-mongodb-session')(session);
-const store = new MongoDBStore({
-  uri: "mongodb+srv://karlarboiz2:4LSkPzFKPnAJRN6k@cluster0.ihvsaps.mongodb.net/?retryWrites=true&w=majority",
-  databaseName:'keeptab2',
-  collection: 'sessions'
-});
 
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine','ejs');
