@@ -1,8 +1,8 @@
 body{
     padding: 0;
     margin: 0;
-    font-family: 'Manrope', sans-serif;
-    background-color: #FDEBED;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #BFACE2;
 }
 
 li {
@@ -12,3 +12,4 @@ li {
 a {
     text-decoration: none;
 }
+

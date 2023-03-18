@@ -1,14 +1,33 @@
-header nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 5rem;
-    max-width: 90vw;
+header {
+    max-width: 80rem;
     margin: 0 auto;
 }
 
+header nav ul,header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    justify-content: space-around;
+    min-height: 5rem;
+    max-width: 100%;
+}
+
+header nav h2 {
+    max-width: 20%;
+}
+
+header nav ul {
+    width: 60%;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    font-size: 1rem;
+}
+
 header nav a {
-    color: #740852;
-    font-size: 1.5rem;
+    color: #5b72ce;
     font-weight: 900;
 }

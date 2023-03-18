@@ -1,17 +1,46 @@
+<% if(logtab.length === 0) {%>
+
+  <p class="logtab-message">No tabs logged yet!</p>
+<%} else {%>
+  
 
 <div id="logtab-list">
-    <h1 class="logtab-header">Logtab List</h1>
 
-    <ul class="logtab-container">
-        <% for(const data of logtab) {%>
-            <li>
-                <hr> 
-                <p><%=data.cname%></p>
-                <p><%=data.pnumber%> <%=data.pname%> </p>
-                <p>P<%=data.total%></p>
-                <p><%=data.date%></p>
-            </li>
-        <%}%>
-    </ul>
-            
+  <table>
+      <tr class="table-header">
+        <th>Customer Name</th>
+        <th>Item Name</th>
+        <th>Item No.</th>
+        <th>Total </th>
+  
+      </tr>
+
+      <% for(const data of logtab) {%>
+
+          <tr class="table-data">
+              <td><%=data.cname%></td>
+              <td><%=data.pname%> </td>
+              <td><%=data.pnumber%></td>
+              <td class="final-column">P<%=data.total%> 
+              <span class="settings-container">
+               
+                <i class="fa fa-ellipsis-v" style="cursor: pointer;"></i>
+              
+                <div class="settings-options">
+                  <button>x</button>
+                  <p class="settings-option__edit" data-link="<%=data._id%>">edit</p>
+                  <p class="settings-option__delete" data-link="<%=data._id%>">delete</p>
+                </div>
+                
+              </span></td>
+              
+            </tr>
+      <%}%>
+      
+  
+    </table>
+          
 </div>
+
+
+<%}%>

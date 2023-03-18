@@ -1,0 +1,40 @@
+<form action="/addingtab/:id" method="POST" id="submit-tab" name="submit-tab">
+    <div class="form-control">
+        <label for="customer">Customers:</label>
+        <select name="customer" id="customer">
+            
+            <% for(const data of customers) {%>
+                <option value="<%=data._id%>">
+                    <%=data.name.firstName%>
+                </option>
+            <%}%>
+        </select>
+    </div>
+
+    <div class="form-control">
+        <label for="product">Products</label>
+        <select name="product" id="product">
+            
+            <% for(const data of products) {%>
+                <option value="<%=data._id%>">
+                    <%=data.name%>
+                </option>
+            <%}%>
+        </select>
+    </div>
+
+   <div class="tab-control">
+
+        <input type="button" value="-" name="minus">
+        <input type="button" value="+" name="add">
+        <input type="number" readonly name="productnumber">
+        <input type="number" readonly name="total">
+
+        
+   </div>
+
+    <div class="editform-btns">
+        <input type="submit" value="Register" name="submit">
+        <input type="button" value="Cancel" name="cancel">
+    </div>
+</form>

@@ -33,18 +33,38 @@ class AddingTab {
         return logtab;
     }
 
-    // async fetchTeacherData() {
+    async fetchSpecificLogtab() {
 
-    //     if(!this.id) {
-    //         return;
-    //     }
+        if(!this.id) {
+            return;
+        }
 
-    //     const teacherDoc = await database.getDbFunc().collection('storedata').findOne({_id: this.id});
-    //     this.completeName = `${teacherDoc.name.firstName} ${teacherDoc.name.middleName } ${teacherDoc.name.lastName}`
-    // }
+        const logtabDoc = await database.getDbFunc().collection('logtab').findOne({_id: this.id});
+        this.cid = logtabDoc.cid;
+        this.pid = logtabDoc.pid;
+        this.pnumber = logtabDoc.pnumber;
+        this.total = logtabDoc.total;
+    }
 
 
-    async saveSubject() {
+    async saveTab() {
+
+        if(this.id) {
+            await database.getDbFunc().collection('logtab').updateOne({
+                _id: this.id
+            },{
+                $set:{
+                    cid:this.cid,
+                    cname: this.cname,
+                    pid:this.pid,
+                    pname: this.pname,
+                    pnumber: this.pnumber,
+                    total: this.total,
+                    date: new Date()
+                }
+            });
+        
+        }else {
             await database.getDbFunc().collection('logtab').insertOne({
                 cid:this.cid,
                 cname: this.cname,
@@ -55,6 +75,17 @@ class AddingTab {
                 date: new Date()
             });
         
+        }
+           
+    }
+
+    async deleteTab() {
+        
+        if(!this.id) {
+            return;
+        }
+
+        await database.getDbFunc().collection('logtab').deleteOne({_id: this.id});
     }
 
 }
