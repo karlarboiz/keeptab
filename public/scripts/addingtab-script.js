@@ -195,7 +195,7 @@ async function submitFormTabHandler(e) {
     }
 
     const submittedInfoJson = await submittedInfo.json()
-    console.log(submittedInfo.status(404))
+
     triggerErrorMessage(submittedInfoJson.message,true);
 
     productNumberInput.value = 0;
