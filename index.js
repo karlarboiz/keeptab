@@ -12,16 +12,7 @@ app.use(express.urlencoded({
     extended: true
 }))
 app.use(express.json())
-app.use(session({
-    secret:'super-secret',
-    resave:false,
-    saveUninitialized:false,
-    store:store,
-    cookie:{
-        maxAge: 2 * 24 * 60 *60 *1000,
-        sameSite:'lax'
-    }
-}))
+
 
 const main = require('./routes/addingtab__route')
 
